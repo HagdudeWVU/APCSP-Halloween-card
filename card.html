@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,inital-scale=10">
+        <title>Card</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="Title">Happy Halloween</div>
+        <audio id="boom" src="boom.mp3"></audio>
+        <audio id="monster" src="monster.mp3"></audio>
+        <div class="scary">Did the sound scare you?<br>No?<br><button onclick="jumpscare()">oh.
+        </button></div>
+        <script>
+                window.addEventListener("load", function() {
+            document.getElementById("boom").play();
+            });
+        </script>
+         <script>
+                window.addEventListener("load", function() {
+            document.getElementById("monster").play();
+            });
+        </script>
+        <script>
+            function jumpscare(){
+                window.location.href='jumpscare.html';
+            }
+        </script>
+
+    </body>
+</html>

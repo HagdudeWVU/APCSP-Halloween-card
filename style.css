@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    align-items: center;     
+    min-height: 100vh;       
+    margin-top: 0;
+    background-color:orange;
+    flex-direction: column;
+}
+
+.cat{
+    position:fixed;
+    bottom:0;
+    right:0;
+    width: 80px;
+    height: auto;
+}
