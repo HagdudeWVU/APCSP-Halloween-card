@@ -21,6 +21,13 @@
             if(!booed && v.currentTime >= BOO_AT){ booed = true; a.currentTime = 0; a.muted = false; } 
             requestAnimationFrame(tick);
         }
+        function arm(){
+            booed = false; a.currentTime = 0; a.muted = true;
+            a.play().catch(()=>{}); 
+        }
+        v.addEventListener('play', arm);
+        tick();
+ 
     </script>
    </body>
 </html>
