@@ -13,25 +13,14 @@
     <script>
         const v = document.getElementById('jumpscare');
         const a = document.getElementById('boo');
-        const BOO_AT = 2.03; // when the boo hits in the video (seconds) — tune while watching
-        a.muted = true;  // start silent so decode latency is absorbed before the cut
-        a.volume = 0.5;  // quieter
+        const BOO_AT = 2.03; 
+        a.muted = true;  
+        a.volume = 0.5; 
         let booed = false;
-        // audio plays from the video's start, muted; unmute at the cut = instant, no start latency
         function tick(){
-            if(!booed && v.currentTime >= BOO_AT){ booed = true; a.currentTime = 0; a.muted = false; } // rewind to the attack, then unmute = instant
+            if(!booed && v.currentTime >= BOO_AT){ booed = true; a.currentTime = 0; a.muted = false; } 
             requestAnimationFrame(tick);
         }
-        function arm(){
-            booed = false; a.currentTime = 0; a.muted = true;
-            a.play().catch(()=>{}); // starts right as the video does
-        }
-        v.addEventListener('play', arm);
-        tick();
-        // ponytail: if muted autoplay is blocked, restart the whole scare on first gesture
-        function restart(){ booed = false; v.currentTime = 0; v.play(); }
-        document.addEventListener('pointerdown', restart, {once:true});
-        document.addEventListener('keydown', restart, {once:true});
     </script>
    </body>
 </html>
