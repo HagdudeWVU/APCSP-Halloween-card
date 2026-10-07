@@ -2,16 +2,49 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,inital-scale=10">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
         <title>Card</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="Title">Happy Halloween</div>
+        <div class="title">Happy Halloween</div>
         <audio id="boom" src="boom.mp3"></audio>
         <audio id="monster" src="spooky.mp3"></audio>
-        <div class="scary">Did the sound scare you?<br>No?<br><button onclick="jumpscare()">oh.
+        
+        <div class="scary">Did the sound scare you?<br><br>No?<br><br><button onclick="jumpscare()">oh.
         </button></div>
+        <div class="list">
+            <h3>Best Halloween Candies:</h3>
+                <ol>    
+                    <li>Twix</li>
+                    <li>Kitkat</li>
+                    <li>Nerds Gummy Clusters</li>
+                    <li>Skittles</li>
+                    <li>Whoppers</li>
+                </ol>
+        </div>
+        <iframe
+            src="https://www.youtube.com/embed/sVjk5nrb_lI"
+            title="YouTube video player"
+            allow="autoplay; encrypted-media; fullscreen"
+            allowfullscreen>
+        </iframe>
+        <img class="side-gif left" src="ghost.gif" alt="">
+        <img class="side-gif right" src="ghost.gif" alt="">
+        <button id="muteBtn" onclick="toggleMute()">Mute</button>
+        <button id="confettiBtn" onclick="popConfetti()">Confetti</button>
+
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+        <script>
+  function popConfetti() {
+    confetti({
+      particleCount: 200,
+      spread: 120,
+      origin: { y: 0.6 },
+      colors: ['#ff7518', '#000000', '#6a0dad', '#ffffff']
+    });
+  }
+</script>
         <script>
                 window.addEventListener("load", function() {
             document.getElementById("boom").play();
@@ -26,6 +59,17 @@
             function jumpscare(){
                 window.location.href='jumpscare.html';
             }
+        </script>
+        <script>
+            function toggleMute() {
+  const sounds = document.querySelectorAll("audio");
+  const btn = document.getElementById("muteBtn");
+
+  const shouldMute = !sounds[0].muted;
+
+  sounds.forEach(sound => sound.muted = shouldMute);
+  btn.textContent = shouldMute ? " Unmute" : " Mute";
+}
         </script>
 
     </body>

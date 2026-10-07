@@ -1,3 +1,95 @@
 body {
-    background-color:orange;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin: 0;
+  background-color: orange;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title {
+  padding: 40px 0;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.scary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.scary button {
+  background-color: black;
+  color: orange;
+  border: 2px solid darkred;
+  border-radius: 15px;
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.scary button:hover {
+  background-color: red;
+  color: orange;
+  border: 2px solid black;
+}
+
+.scary button:active {
+  transform: scale(0.95);
+}
+
+#muteBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 5px black;
+  border-radius: 15px;
+  width: 300px;
+  align-self: center;
+}
+
+.list ol {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.side-gif {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  pointer-events: none;
+}
+
+.side-gif.left {
+  left: 20px;
+}
+
+.side-gif.right {
+  right: 20px;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+@media (max-width: 900px) {
+  .side-gif {
+    display: none;
+  }
+}
+
+#confettiBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
 }
