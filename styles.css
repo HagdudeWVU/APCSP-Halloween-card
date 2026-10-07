@@ -12,7 +12,7 @@ body {
   padding: 40px 0;
   font-size: 34px;
   font-weight: bold;
-  font-family: 'creepster', sans-serif;
+  font-family: 'creepster', 'comic-sans', sans-serif;
 }
 
 .scary {
